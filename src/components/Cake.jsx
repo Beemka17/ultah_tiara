@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "../assets/css/cake.css";
 import { CakeSVG, confetti } from "../assets";
 import { motion } from "framer-motion";
@@ -76,11 +76,6 @@ function Cake() {
   return (
     <>
       <div className="bg-black/80 h-screen w-screen flex items-center justify-center overflow-hidden relative">
-        {!candlesBlownOut && (
-          <div className="absolute top-2 text-gray-200 text-3xl">
-            <p>Blow the candle</p>
-          </div>
-        )}
         {candlesBlownOut && (
           <div
             className="absolute inset-0 bg-cover bg-center z-50"
@@ -122,13 +117,39 @@ function Cake() {
           <div className="absolute -top-48 left-1/2 transform -translate-x-1/2">
             <div className="candle">
               {!candlesBlownOut && (
-                <>
-                  <div className="flame"></div>
-                  <div className="flame"></div>
-                  <div className="flame"></div>
-                  <div className="flame"></div>
-                  <div className="flame"></div>
-                </>
+                <div>
+                  <div className="absolute -top-[200px] text-gray-200 text-3xl">
+                    <motion.div
+                      animate={{ opacity: [0, 0.25, 0] }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        delay: 8,
+                      }}
+                      className="block -translate-x-[60px] translate-y-[105px] -rotate-[30deg] text-gray-200 text-xl "
+                    >
+                      blow
+                    </motion.div>
+                    <motion.div
+                      animate={{ opacity: [0, 0.25, 0] }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        delay: 9,
+                      }}
+                      className="block translate-x-10 translate-y-[80px] rotate-[30deg] text-gray-200 text-xl"
+                    >
+                      blow
+                    </motion.div>
+                  </div>
+                  <div>
+                    <div className="flame"></div>
+                    <div className="flame"></div>
+                    <div className="flame"></div>
+                    <div className="flame"></div>
+                    <div className="flame"></div>
+                  </div>
+                </div>
               )}
             </div>
           </div>
