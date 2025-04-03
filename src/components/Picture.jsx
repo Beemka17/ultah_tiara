@@ -1,16 +1,14 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { picture} from '../assets';
-import { Link } from 'react-router-dom'; 
-import SectionWrapper from './SectionWrapper';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { picture1 } from "../assets";
+import { picture2 } from "../assets";
+import { picture3 } from "../assets";
+import { picture4 } from "../assets";
+import { picture5 } from "../assets";
+import { Link } from "react-router-dom";
+import SectionWrapper from "./SectionWrapper";
 // Add your own images by putting them in the assets folder and import them.
-const images = [
- picture,
- picture,
- picture,
- picture,
-
-];
+const images = [picture1, picture2, picture3, picture4, picture5];
 function Picture() {
   const [loadedImages, setLoadedImages] = useState(0);
 
@@ -21,9 +19,7 @@ function Picture() {
   return (
     <SectionWrapper>
       <Link to="/card">
-        <p className="absolute text-4xl font-bold text-customBlue inset-0 flex justify-center items-center text-center transform rotate-6 cursor-pointer">
-          You're Getting Old! :P
-        </p>
+        <p className="absolute text-4xl font-bold text-customBlue inset-0 flex justify-center items-center text-center transform rotate-6 cursor-pointer">Ciee yang hari ini tambah tua! :P</p>
       </Link>
       {!allImagesLoaded && (
         <div className="absolute inset-0 flex justify-center items-center">
@@ -33,9 +29,7 @@ function Picture() {
       {images.map((image, index) => (
         <motion.div
           key={index}
-          className={`absolute top-0 left-0 w-full h-full transition-opacity duration-500 ${
-            allImagesLoaded ? 'opacity-100' : 'opacity-0'
-          }`}
+          className={`absolute top-0 left-0 w-full h-full transition-opacity duration-500 ${allImagesLoaded ? "opacity-100" : "opacity-0"}`}
           style={{
             zIndex: images.length - index,
           }}

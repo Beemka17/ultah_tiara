@@ -39,9 +39,7 @@ function Cake() {
       if (!analyser || !dataArray) return;
       analyser.getByteFrequencyData(dataArray);
       const lowFrequencyValues = dataArray.slice(0, 15);
-      const averageLowFrequency =
-        lowFrequencyValues.reduce((sum, value) => sum + value, 0) /
-        lowFrequencyValues.length;
+      const averageLowFrequency = lowFrequencyValues.reduce((sum, value) => sum + value, 0) / lowFrequencyValues.length;
 
       const blowThreshold = 100; // Moderate threshold
       const requiredDuration = 1500; // 1. 5 sec blow required
@@ -85,20 +83,10 @@ function Cake() {
           />
         )}
         {candlesBlownOut && (
-          <motion.div
-            className="absolute top-20 text-white text-3xl font-bold z-50"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-          >
+          <motion.div className="absolute top-20 text-white text-3xl font-bold z-50" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: "easeOut" }}>
             <svg width="800" height="200" viewBox="0 0 400 200">
               <defs>
-                <path
-                  id="curve"
-                  d="M50,150 Q200,50 350,150"
-                  fill="transparent"
-                  stroke="white"
-                />
+                <path id="curve" d="M50,150 Q200,50 350,150" fill="transparent" stroke="white" />
               </defs>
               <text fontSize="40" fill="white" textAnchor="middle">
                 <textPath href="#curve" startOffset="50%">
@@ -107,9 +95,7 @@ function Cake() {
               </text>
             </svg>
             <Link to="/present" className="flex justify-center items-center">
-              <p className="absolute top-[30rem] xs:top-[36rem] s:top-[40rem] px-7 py-3 bg-customBlue text-white rounded-full hover:bg-blue-600 font-medium text-base text-center ">
-                Next Page
-              </p>
+              <p className="absolute top-[30rem] xs:top-[36rem] s:top-[40rem] px-7 py-3 bg-customBlue text-white rounded-full hover:bg-blue-600 font-medium text-base text-center ">Next Page</p>
             </Link>
           </motion.div>
         )}
@@ -128,7 +114,7 @@ function Cake() {
                       }}
                       className="block -translate-x-[60px] translate-y-[105px] -rotate-[30deg] text-gray-200 text-xl "
                     >
-                      blow
+                      tiup lilinnya
                     </motion.div>
                     <motion.div
                       animate={{ opacity: [0, 0.25, 0] }}
@@ -139,7 +125,7 @@ function Cake() {
                       }}
                       className="block translate-x-10 translate-y-[80px] rotate-[30deg] text-gray-200 text-xl"
                     >
-                      blow
+                      tiup lilinnya
                     </motion.div>
                   </div>
                   <div>
